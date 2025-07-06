@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Félicitations pour ton Baccalauréat !</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #faf9f6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #fdcb6e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradient 8s ease infinite;
+            background-size: 200% 200%;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            animation: fall linear infinite;
+        }
+        
+        @keyframes fall {
+            to { transform: translateY(100vh); }
+        }
+        
+        .timeline-item {
+            position: relative;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b6b, #fdcb6e);
+        }
+        
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .hover-zoom {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-zoom:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body class="relative overflow-x-hidden">
+    <!-- Confetti animation -->
+    <div id="confetti-container"></div>
+    
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col items-center justify-center text-center px-4 py-16 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1c668347-2630-4a55-b088-ce6838fbf5ef.png" alt="Icône de diplôme doré avec ruban rouge" class="mx-auto mb-8 w-32 h-32">
+            <h1 class="title-font text-5xl md:text-7xl font-bold mb-6 gradient-text">
+                Félicitations !
+            </h1>
+            <h2 class="title-font text-3xl md:text-5xl font-semibold mb-8 text-rose-600">
+                Félicitations GNAHOUAME Nadia !
+            </h2>
+            <p class="text-xl md:text-2xl mb-12 max-w-2xl mx-auto leading-relaxed">
+                Toute la famille est si fière de toi pour cette incroyable réussite. Ton travail et ta persévérance ont porté leurs fruits !
+            </p>
+            <div class="animate-bounce">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z" />
+                </svg>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Achievement Timeline -->
+    <section class="py-20 bg-gradient-to-r from-rose-50 to-blue-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="title-font text-4xl font-bold text-center mb-16 text-gray-800">Ton Parcours Réussi</h2>
+            
+            <div class="space-y-8 pl-12 relative before:absolute before:left-6 before:top-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-pink-400 before:to-yellow-300">
+                <div class="timeline-item">
+                    <h3 class="text-2xl font-bold text-pink-600">Mention Très Bien</h3>
+                    <p class="text-gray-700 mt-2">Ton travail acharné durant toutes ces années a été récompensé par cette magnifique mention.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3 class="text-2xl font-bold text-blue-600">Épreuves Réussies</h3>
+                    <p class="text-gray-700 mt-2">Tu as brillamment passé toutes les épreuves, même celles qui te faisaient le plus peur.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3 class="text-2xl font-bold text-purple-600">Projet Personnel</h3>
+                    <p class="text-gray-700 mt-2">Ton projet en spécialité a impressionné tous les examinateurs par sa qualité et son originalité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Celebration Gallery -->
+    <section class="py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="title-font text-4xl font-bold text-center mb-16 text-gray-800">Jour de Célébration</h2>
+            
+            <div class="photo-grid">
+                <div class="hover-zoom rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/253f6a74-7770-467e-aa8e-7d6cfe7c8661.png" alt="Famille souriante autour de la diplomée avec ballons et fleurs" class="w-full h-64 object-cover">
+                </div>
+                <div class="hover-zoom rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f32d9812-affe-4392-b9dc-c2ffd1a00359.png" alt="Jeune femme tenant son diplôme avec fierté et sourire radieux" class="w-full h-64 object-cover">
+                </div>
+                <div class="hover-zoom rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/89e28437-0ef3-4b46-9db2-1b6b01d57836.png" alt="Repas de célébration avec gâteau décoré spécial pour l'occasion" class="w-full h-64 object-cover">
+                </div>
+                <div class="hover-zoom rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2a3037db-087a-4bb5-acc5-d3afdbbd4416.png" alt="Photos de groupe avec amis et famille pour immortaliser ce moment" class="w-full h-64 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Message Section -->
+    <section class="py-20 bg-gradient-to-r from-yellow-50 to-rose-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="title-font text-4xl font-bold text-center mb-12 text-gray-800">Un Message Spécial pour Toi</h2>
+            
+            <div class="bg-white p-8 md:p-12 rounded-xl shadow-md text-center">
+                <div class="relative">
+                    <svg class="w-12 h-12 text-yellow-400 mx-auto mb-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                </div>
+                <div class="prose prose-lg mx-auto">
+                    <p class="text-gray-700 mb-4">Ma chère petite sœur,</p>
+                    <p class="text-gray-700 mb-4">Aujourd'hui est un grand jour qui marque la fin d'un chapitre et le début d'une nouvelle aventure.</p>
+                    <p class="text-gray-700 mb-4">Ton baccalauréat est bien plus qu'un diplôme, c'est la preuve de ton intelligence, ta persévérance et ta capacité à relever tous les défis.</p>
+                    <p class="text-gray-700 mb-4">Je suis incroyablement fier de toi et je sais que ce n'est qu'un premier pas vers de plus grandes réussites.</p>
+                    <p class="text-gray-700 font-semibold">Profite bien de ce moment si mérité !</p>
+                    <div class="mt-10 flex flex-col items-center">
+                        <p class="text-lg font-medium">De la part de ton grand frère chéri ❤️</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sister's Photo Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="title-font text-4xl font-bold mb-8">Notre Belle Diplomée</h2>
+            <div class="mt-10 flex justify-center">
+                <div class="w-64 h-64 rounded-full overflow-hidden border-4 border-pink-200 shadow-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a304ab3e-a193-4d6b-9e0f-bf50827976bf.png" alt="Portrait de Nadia Gnahouame, notre diplômée" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <p class="mt-6 text-xl text-gray-700">Nous sommes si fiers de toi, Nadia !</p>
+        </div>
+    </section>
+
+    <!-- Future Section -->
+    <section class="py-20">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="title-font text-4xl font-bold mb-6 text-gray-800">Et Maintenant ?</h2>
+            <p class="text-xl text-gray-700 mb-8">Le monde s'ouvre à toi pleins de nouvelles opportunités passionnantes !</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Études Supérieures</h3>
+                    <p class="text-gray-600">Poursuis vers le domaine qui te passionne avec confiance.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-1.343 3-3m-3-3c1.657 0 3 1.343 3 3" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Voyages</h3>
+                    <p class="text-gray-600">Découvre de nouveaux horizons et cultures.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Rêves à Réaliser</h3>
+                    <p class="text-gray-600">C'est le moment de concrétiser tous tes projets !</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="py-12 bg-gray-800 text-white text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <p class="text-lg">Avec tout notre amour et notre fierté</p>
+            <p class="mt-4">Ton grand frère et toute la famille qui t'aiment plus que tout ❤️</p>
+            <div class="mt-8 flex justify-center space-x-6">
+                <button onclick="window.location.href='#'" class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 rounded-full font-medium transition-colors">
+                    Envoyer un message
+                </button>
+            </div>
+            <p class="mt-8 text-gray-400">© 2023 - Félicitations pour ton Baccalauréat</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Confetti animation
+        function createConfetti() {
+            const colors = ['#ff6b6b', '#4ecdc4', '#fdcb6e', '#a18cd1', '#fbc2eb'];
+            const container = document.getElementById('confetti-container');
+            
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = `${Math.random() * 100}%`;
+                confetti.style.top = '-10px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = `${Math.random() * 8 + 4}px`;
+                confetti.style.height = `${Math.random() * 8 + 4}px`;
+                confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                confetti.style.animationDelay = `${Math.random() * 2}s`;
+                container.appendChild(confetti);
+            }
+        }
+        
+        // Typewriter effect for main message
+        function typeWriter() {
+            const message = document.querySelector('.prose');
+            const text = message.textContent;
+            message.textContent = '';
+            
+            let i = 0;
+            const typing = setInterval(() => {
+                if (i < text.length) {
+                    message.textContent += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(typing);
+                }
+            }, 20);
+        }
+        
+        // Initialize animations
+        window.addEventListener('DOMContentLoaded', () => {
+            createConfetti();
+            setTimeout(typeWriter, 1000);
+        });
+    </script>
+</body>
+</html>
+
