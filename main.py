@@ -15,7 +15,7 @@ from pathlib import Path
 # Configuration du serveur
 PORT = 8000
 HOST = 'localhost'
-HTML_FILE = 'jeu1.html'
+HTML_FILE = 'main.html'
 
 class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
     """Handler personnalisé pour servir les fichiers HTML"""
