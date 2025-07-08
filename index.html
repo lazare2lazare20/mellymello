@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melly Mello - Restaurant Gastronomique à Lomé, Togo</title>
+    
+    <!-- Favicon (logo de l'onglet) -->
+    <link rel="icon" href="WhatsApp Image 2025-07-08 à 15.51.53_e75254ee.jpg" type="image/jpeg">
+    
+    <!-- Logo de l'entreprise (pour référence) -->
+    <link rel="apple-touch-icon" href="logo.pdf">
+    
+    <meta name="description" content="Restaurant Melly Mello à Lomé - Découvrez une cuisine togolaise authentique et raffinée dans une ambiance chaleureuse.">
+    <meta name="keywords" content="restaurant, Lomé, Togo, cuisine togolaise, Melly Mello, pifion, attieke, ayimolou">
+    <meta name="author" content="Melly Mello">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Melly Mello - Restaurant Gastronomique à Lomé">
+    <meta property="og:description" content="Découvrez une cuisine togolaise authentique et raffinée dans une ambiance chaleureuse.">
+    <meta property="og:image" content="https://example.com/path-to-your-image.jpg">
+    <meta property="og:url" content="https://example.com">
+    <meta property="og:type" content="website">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            overflow-x: hidden;
+            background-color: #f9f5f0;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.95) 0%, rgba(52, 73, 94, 0.95) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 1.1rem;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, #e74c3c, #f39c12);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 70%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.8rem;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease 0.2s both;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background: linear-gradient(45deg, #e74c3c, #f39c12);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.4s ease;
+            animation: fadeInUp 1s ease 0.4s both;
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.4);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(231, 76, 60, 0.6);
+        }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #f39c12, #e74c3c);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .cta-button:hover::after {
+            opacity: 1;
+        }
+
+        .whatsapp-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #25D366;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+            background-color: #128C7E;
+        }
+
+        .whatsapp-button i {
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 4rem;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(45deg, #e74c3c, #f39c12);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background: #f9f5f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: #444;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            height: 450px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            transition: transform 0.5s ease;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .about-image:hover {
+            transform: translateY(-10px);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Menu Section */
+        .menu {
+            background: white;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .menu-item {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, #e74c3c, #f39c12);
+            transition: width 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .menu-item:hover::before {
+            width: 8px;
+        }
+
+        .menu-item h3 {
+            color: #e74c3c;
+            margin-bottom: 1.2rem;
+            font-size: 1.7rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .menu-item h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(to right, #e74c3c, #f39c12);
+        }
+
+        .menu-item p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #f39c12;
+            display: flex;
+            align-items: center;
+        }
+
+        .price::before {
+            content: '—';
+            margin-right: 10px;
+            color: #ddd;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: #f9f5f0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            height: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        /* Video Section */
+        .video-section {
+            background: #2c3e50;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-overlay:hover {
+            opacity: 0;
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(231, 76, 60, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .play-button i {
+            color: white;
+            font-size: 2rem;
+            margin-left: 5px;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+            background: rgba(231, 76, 60, 1);
+        }
+
+        /* Online Order Section */
+        .online-order {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+        }
+
+        .online-order .section-title {
+            color: white;
+        }
+
+        .order-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            flex: 1;
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: white;
+            font-weight: 400;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #f39c12;
+            background: rgba(255,255,255,0.15);
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            width: auto;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1.5rem;
+            font-weight: bold;
+        }
+
+        .submit-btn i {
+            margin-right: 10px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            background: linear-gradient(45deg, #128C7E, #25D366);
+        }
+
+        /* Location Section */
+        .location {
+            background: #2c3e50;
+            color: white;
+            position: relative;
+        }
+
+        .location::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .location-info h3 {
+            color: #f39c12;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .location-info p {
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .location-info i {
+            margin-right: 10px;
+            color: #e74c3c;
+            font-size: 1.2rem;
+            width: 25px;
+            text-align: center;
+        }
+
+        .map-container {
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: #f9f5f0;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .contact-card h3 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-card h3 i {
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+
+        .contact-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .contact-form {
+            background: #f9f5f0;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Floating WhatsApp Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1) translateY(-5px);
+            background-color: #128C7E;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            color: #f39c12;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(to right, #e74c3c, #f39c12);
+        }
+
+        .footer-column p {
+            margin-bottom: 1rem;
+            color: #ddd;
+            line-height: 1.8;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-links a:hover {
+            color: #f39c12;
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            margin-right: 8px;
+            font-size: 0.8rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: linear-gradient(45deg, #e74c3c, #f39c12);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+            
+            .about-content,
+            .location-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .about-image,
+            .map-container {
+                height: 350px;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.4rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .order-form,
+            .contact-form {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.4s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.6s;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(#e74c3c, #f39c12);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(#c0392b, #e67e22);
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/22893999667?text=Bonjour%20Melly%20Mello,%20je%20voudrais%20passer%20une%20commande" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="logo.pdf" alt="Melly Mello Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#apropos">À Propos</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#video">Vidéo</a></li>
+                <li><a href="#commande">Commander</a></li>
+                <li><a href="#localisation">Localisation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="accueil" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Melly Mello</h1>
+                <p>Une expérience culinaire exceptionnelle au cœur de Lomé</p>
+                <div style="display: flex; justify-content: center; gap: 1.5rem;">
+                    <a href="#menu" class="cta-button">Découvrir notre Menu</a>
+                    <a href="#commande" class="cta-button" style="background: linear-gradient(45deg, #25D366, #128C7E);">Commander en Ligne</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="apropos" class="about">
+        <div class="container">
+            <h2 class="section-title fade-in">À Propos de Nous</h2>
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <p>Ouvert en 2024, Melly Mello est vite devenu un lieu connu pour bien manger à Lomé. Notre restaurant mélange la tradition togolaise avec une touche moderne, dans un endroit accueillant et élégant.</p>
+                    <p>Notre chef prépare des plats togolais avec originalité tout en gardant leurs vraies saveurs.</p>
+                    <p>Nous utilisons des produits frais et locaux, choisis avec soin chez des producteurs togolais, pour vous offrir des repas bons et responsables.</p>
+                    <p>Que ce soit pour un repas d'affaires, un dîner en amoureux ou une fête en famille, notre équipe est là pour vous faire passer un bon moment.</p>
+                </div>
+                <div class="about-image fade-in delay-1">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Intérieur du restaurant Melly Mello">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2 class="section-title fade-in">Notre Menu</h2>
+            <div class="menu-grid">
+                <div class="menu-item fade-in">
+                    <h3>Plats Traditionnels</h3>
+                    <p>Pifion - Attieke - Ayimolou - Spaghetti - Akoumé - Khom - Adjékoumé - Frite au poulet</p>
+                    <div class="price">3,500 - 8,500 FCFA</div>
+                </div>
+                <div class="menu-item fade-in delay-1">
+                    <h3>Petit Déjeuner</h3>
+                    <p>Café togolais - Thé - Chocolat chaud - Pain frais avec confiture - Omelettes - Fruits frais</p>
+                    <div class="price">1,500 - 4,500 FCFA</div>
+                </div>
+                <div class="menu-item fade-in delay-2">
+                    <h3>Déjeuner & Dîner</h3>
+                    <p>Plats complets avec accompagnements - Grillades - Poissons frais - Salades composées</p>
+                    <div class="price">4,500 - 12,000 FCFA</div>
+                </div>
+                <div class="menu-item fade-in">
+                    <h3>Boissons</h3>
+                    <p>Jus naturels (gingembre, bissap, tamarin) - Cocktails - Vins - Bières locales - Eaux minérales</p>
+                    <div class="price">1,000 - 5,000 FCFA</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galerie" class="gallery">
+        <div class="container">
+            <h2 class="section-title fade-in">Galerie</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Plat traditionnel togolais">
+                </div>
+                <div class="gallery-item fade-in delay-1">
+                    <img src="WhatsApp Image 2025-07-08 à 15.51.53_e75254ee.jpg" alt="Bar et dépôt de boissons Melly Mello">
+                </div>
+                <div class="gallery-item fade-in delay-2">
+                    <img src="KAKEMONO MELLY MELLO.png" alt="Menu des plats Melly Mello">
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="FLYERS MELLY MELLO.png" alt="Carte des plats Melly Mello">
+                </div>
+                <div class="gallery-item fade-in delay-1">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1381&q=80" alt="Plat gastronomique">
+                </div>
+                <div class="gallery-item fade-in delay-2">
+                    <img src="WhatsApp Image 2025-07-08 à 15.52.30_a0e4e2b7.jpg" alt="Spécialités Melly Mello">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nouvelle Section Vidéo -->
+    <section id="video" class="video-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Notre Univers en Vidéo</h2>
+            <div class="video-container fade-in">
+                <video poster="FLYERS MELLY MELLO.png" controls>
+                    <!-- Remplacez par vos propres vidéos -->
+                    <source src="restaurant-video.mp4" type="video/mp4">
+                    <source src="restaurant-video.webm" type="video/webm">
+                    Votre navigateur ne supporte pas les vidéos HTML5.
+                </video>
+                <div class="video-overlay">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Galerie de mini-vidéos -->
+            <div class="video-gallery" style="margin-top: 4rem;">
+                <h3 style="text-align: center; margin-bottom: 2rem; color: #f39c12;">Découvrez nos spécialités</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="video-thumbnail">
+                        <video poster="KAKEMONO MELLY MELLO.png" controls style="width: 100%; border-radius: 10px;">
+                            <source src="specialite1.mp4" type="video/mp4">
+                        </video>
+                        <h4 style="margin-top: 1rem; text-align: center;">Préparation du Pifion</h4>
+                    </div>
+                    <div class="video-thumbnail">
+                        <video poster="WhatsApp Image 2025-07-08 à 15.52.30_a0e4e2b7.jpg" controls style="width: 100%; border-radius: 10px;">
+                            <source src="specialite2.mp4" type="video/mp4">
+                        </video>
+                        <h4 style="margin-top: 1rem; text-align: center;">Notre Ayimolou maison</h4>
+                    </div>
+                    <div class="video-thumbnail">
+                        <video poster="FLYERS MELLY MELLO.png" controls style="width: 100%; border-radius: 10px;">
+                            <source src="specialite3.mp4" type="video/mp4">
+                        </video>
+                        <h4 style="margin-top: 1rem; text-align: center;">Ambiance du restaurant</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="commande" class="online-order">
+        <div class="container">
+            <h2 class="section-title fade-in">Commander en Ligne</h2>
+            <p style="text-align: center; margin-bottom: 3rem; font-size: 1.2rem; opacity: 0.9;" class="fade-in delay-1">Commandez vos plats préférés et nous les préparerons pour votre arrivée ou pour livraison</p>
+            
+            <form class="order-form fade-in delay-2" id="whatsapp-order-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="order-name">Nom complet</label>
+                        <input type="text" id="order-name" name="name" required placeholder="Votre nom">
+                    </div>
+                    <div class="form-group">
+                        <label for="order-phone">Téléphone</label>
+                        <input type="tel" id="order-phone" name="phone" required placeholder="Votre numéro WhatsApp">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="order-date">Date et heure de retrait/livraison</label>
+                    <input type="datetime-local" id="order-date" name="date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="order-type">Type de commande</label>
+                    <select id="order-type" name="type" required>
+                        <option value="">-- Sélectionnez --</option>
+                        <option value="retrait">Retrait sur place</option>
+                        <option value="livraison">Livraison (Lomé seulement)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="order-address">Adresse de livraison (si applicable)</label>
+                    <input type="text" id="order-address" name="address" placeholder="Quartier, rue, repères">
+                </div>
+                
+                <div class="form-group">
+                    <label for="order-items">Votre commande</label>
+                    <textarea id="order-items" name="items" required placeholder="Ex: 2 Fufu sauce arachide, 1 Poulet braisé, 1 Jus de gingembre..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="order-notes">Notes supplémentaires</label>
+                    <textarea id="order-notes" name="notes" placeholder="Allergies, préférences, etc."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fab fa-whatsapp"></i> Envoyer la commande via WhatsApp
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <section id="localisation" class="location">
+        <div class="container">
+            <h2 class="section-title fade-in">Notre Localisation</h2>
+            <div class="location-content">
+                <div class="location-info fade-in">
+                    <h3>Nous Trouver</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Adresse :</strong> En Face le chateau du CEG Babarakondji, Lomé, Togo</p>
+                    <p><i class="fas fa-phone-alt"></i> <strong>Téléphone :</strong> +228 93 99 96 67 / 97 71 60 18</p>
+                    <p><i class="fas fa-clock"></i> <strong>Horaires d'ouverture :</strong></p>
+                    <p>Mardi - Dimanche : 10h00 - 22h00</p>
+                    <p>Fermé le Lundi</p>
+                    
+                    <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                        <a href="https://maps.app.goo.gl/K91CGZUfo2zw2CiX8" target="_blank" class="cta-button" style="display: inline-block;">Voir sur Google Maps</a>
+                        <a href="tel:+22893999667" class="cta-button" style="display: inline-block; background: linear-gradient(45deg, #25D366, #128C7E);">
+                            <i class="fas fa-phone-alt"></i> Appeler
+                        </a>
+                    </div>
+                </div>
+                <div class="map-container fade-in delay-1">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.317239753585!2d1.2214093153287205!3d6.203028328411834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTInMTAuOSJOIDHCsDEzJzE3LjEiRQ!5e0!3m2!1sfr!2stg!4v1620000000000!5m2!1sfr!2stg" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">Contactez-Nous</h2>
+            <div class="contact-content">
+                <div class="contact-info fade-in">
+                    <div class="contact-card">
+                        <h3><i class="fas fa-phone-alt"></i> Réservation</h3>
+                        <p>Pour réserver une table, appelez-nous directement ou envoyez-nous un message WhatsApp en cliquant sur le bouton flottant.</p>
+                        <p><strong>Téléphone :</strong> +228 93 99 96 67</p>
+                    </div>
+                    <div class="contact-card">
+                        <h3><i class="fas fa-utensils"></i> Événements</h3>
+                        <p>Organisez votre événement privé (mariage, anniversaire, séminaire) dans notre espace dédié. Nous proposons des menus spéciaux et un service personnalisé.</p>
+                    </div>
+                    <div class="contact-card">
+                        <h3><i class="fas fa-info-circle"></i> Informations</h3>
+                        <p>Nous acceptons les cartes de crédit et proposons des facilités de paiement pour les grands groupes. Des menus végétariens et sans gluten sont disponibles sur demande.</p>
+                    </div>
+                </div>
+                <form class="contact-form fade-in delay-1">
+                    <div class="form-group">
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" style="background: linear-gradient(45deg, #e74c3c, #f39c12);">
+                        <i class="fas fa-paper-plane"></i> Envoyer le Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Melly Mello</h3>
+                    <p>Le restaurant Melly Mello vous propose une expérience culinaire unique alliant saveurs togolaises et influences internationales dans un cadre élégant et chaleureux.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Liens Utiles</h3>
+                    <ul class="footer-links">
+                        <li><a href="#accueil"><i class="fas fa-chevron-right"></i> Accueil</a></li>
+                        <li><a href="#apropos"><i class="fas fa-chevron-right"></i> À Propos</a></li>
+                        <li><a href="#menu"><i class="fas fa-chevron-right"></i> Menu</a></li>
+                        <li><a href="#galerie"><i class="fas fa-chevron-right"></i> Galerie</a></li>
+                        <li><a href="#commande"><i class="fas fa-chevron-right"></i> Commander</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> En Face le chateau du CEG Babarakondji, Lomé, Togo</p>
+                    <p><i class="fas fa-phone-alt"></i> +228 93 99 96 67 / 97 71 60 18</p>
+                    <p><i class="fas fa-clock"></i> Mar-Dim: 10h-22h | Fermé Lundi</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Abonnez-vous à notre newsletter pour recevoir nos offres spéciales et actualités.</p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Votre email" required>
+                        </div>
+                        <button type="submit" class="submit-btn" style="width: 100%; padding: 0.8rem;">
+                            <i class="fas fa-paper-plane"></i> S'abonner
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Melly Mello Restaurant. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Update URL without refreshing
+                    if(history.pushState) {
+                        history.pushState(null, null, this.getAttribute('href'));
+                    } else {
+                        location.hash = this.getAttribute('href');
+                    }
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(44, 62, 80, 0.98)';
+                header.style.boxShadow = '0 5px 30px rgba(0,0,0,0.2)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, rgba(44, 62, 80, 0.95) 0%, rgba(52, 73, 94, 0.95) 100%)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // WhatsApp Order Form Submission
+        document.getElementById('whatsapp-order-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = encodeURIComponent(document.getElementById('order-name').value);
+            const phone = encodeURIComponent(document.getElementById('order-phone').value);
+            const date = encodeURIComponent(document.getElementById('order-date').value);
+            const type = encodeURIComponent(document.getElementById('order-type').value);
+            const address = encodeURIComponent(document.getElementById('order-address').value);
+            const items = encodeURIComponent(document.getElementById('order-items').value);
+            const notes = encodeURIComponent(document.getElementById('order-notes').value);
+            
+            // Construct WhatsApp message
+            const whatsappNumber = '22893999667'; // Remplacez par votre numéro WhatsApp
+            const message = `Nouvelle commande Melly Mello:%0A%0A*Nom:* ${name}%0A*Téléphone:* ${phone}%0A*Date/Heure:* ${date}%0A*Type:* ${type}%0A*Adresse:* ${address}%0A%0A*Commande:*%0A${items}%0A%0A*Notes:*%0A${notes}`;
+            
+            // Open WhatsApp with pre-filled message
+            window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Contact form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci pour votre message ! Nous vous contacterons bientôt.');
+            this.reset();
+        });
+
+        // Newsletter form submission
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input').value;
+            alert(`Merci pour votre inscription à notre newsletter (${email}) !`);
+            this.querySelector('input').value = '';
+        });
+
+        // Current year for footer
+        document.querySelector('.copyright p').innerHTML = `&copy; ${new Date().getFullYear()} Melly Mello Restaurant. Tous droits réservés.`;
+
+        // Video player functionality
+        const videoContainer = document.querySelector('.video-container');
+        const video = videoContainer.querySelector('video');
+        const playButton = videoContainer.querySelector('.play-button');
+        
+        playButton.addEventListener('click', function() {
+            video.play();
+            videoContainer.querySelector('.video-overlay').style.opacity = '0';
+        });
+        
+        video.addEventListener('click', function() {
+            if (video.paused) {
+                video.play();
+                videoContainer.querySelector('.video-overlay').style.opacity = '0';
+            } else {
+                video.pause();
+                videoContainer.querySelector('.video-overlay').style.opacity = '1';
+            }
+        });
+    </script>
+</body>
+</html>
