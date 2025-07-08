@@ -4,6 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Melly Mello - Restaurant Gastronomique à Lomé, Togo</title>
+    
+    <!-- Favicon (logo de l'onglet) -->
+    <link rel="icon" href="WhatsApp Image 2025-07-08 à 15.51.53_e75254ee.jpg" type="image/jpeg">
+    
+    <!-- Logo de l'entreprise (pour référence) -->
+    <link rel="apple-touch-icon" href="logo.pdf">
+    
+    <meta name="description" content="Restaurant Melly Mello à Lomé - Découvrez une cuisine togolaise authentique et raffinée dans une ambiance chaleureuse.">
+    <meta name="keywords" content="restaurant, Lomé, Togo, cuisine togolaise, Melly Mello, pifion, attieke, ayimolou">
+    <meta name="author" content="Melly Mello">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Melly Mello - Restaurant Gastronomique à Lomé">
+    <meta property="og:description" content="Découvrez une cuisine togolaise authentique et raffinée dans une ambiance chaleureuse.">
+    <meta property="og:image" content="https://example.com/path-to-your-image.jpg">
+    <meta property="og:url" content="https://example.com">
+    <meta property="og:type" content="website">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -53,19 +71,15 @@
         }
 
         .logo {
-            font-size: 2.2rem;
-            font-weight: bold;
-            background: linear-gradient(45deg, #e74c3c, #f39c12);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: glow 2s ease-in-out infinite alternate;
-            font-family: 'Playfair Display', serif;
+            height: 60px;
+            display: flex;
+            align-items: center;
         }
 
-        @keyframes glow {
-            from { filter: drop-shadow(0 0 5px rgba(231, 76, 60, 0.5)); }
-            to { filter: drop-shadow(0 0 20px rgba(243, 156, 18, 0.8)); }
+        .logo img {
+            height: 100%;
+            max-width: 100%;
+            object-fit: contain;
         }
 
         .nav-links {
@@ -434,6 +448,69 @@
 
         .gallery-item:hover::after {
             opacity: 1;
+        }
+
+        /* Video Section */
+        .video-section {
+            background: #2c3e50;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-overlay:hover {
+            opacity: 0;
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(231, 76, 60, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .play-button i {
+            color: white;
+            font-size: 2rem;
+            margin-left: 5px;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+            background: rgba(231, 76, 60, 1);
         }
 
         /* Online Order Section */
@@ -892,18 +969,21 @@
 </head>
 <body>
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/228XXXXXXXXX?text=Bonjour%20Melly%20Mello,%20je%20voudrais%20passer%20une%20commande" class="floating-whatsapp" target="_blank">
+    <a href="https://wa.me/22893999667?text=Bonjour%20Melly%20Mello,%20je%20voudrais%20passer%20une%20commande" class="floating-whatsapp" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <header>
         <nav class="container">
-            <div class="logo">Melly Mello</div>
+            <div class="logo">
+                <img src="logo.pdf" alt="Melly Mello Logo">
+            </div>
             <ul class="nav-links">
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#apropos">À Propos</a></li>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#video">Vidéo</a></li>
                 <li><a href="#commande">Commander</a></li>
                 <li><a href="#localisation">Localisation</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -946,34 +1026,24 @@
             <h2 class="section-title fade-in">Notre Menu</h2>
             <div class="menu-grid">
                 <div class="menu-item fade-in">
-                    <h3>Entrées</h3>
-                    <p>Accras de morue - Samoussas maison - Brochettes de crevettes - Salade Melly Mello (avocat, crevettes, pamplemousse)</p>
-                    <div class="price">3,500 - 6,500 FCFA</div>
+                    <h3>Plats Traditionnels</h3>
+                    <p>Pifion - Attieke - Ayimolou - Spaghetti - Akoumé - Khom - Adjékoumé - Frite au poulet</p>
+                    <div class="price">3,500 - 8,500 FCFA</div>
                 </div>
                 <div class="menu-item fade-in delay-1">
-                    <h3>Plats Traditionnels</h3>
-                    <p>Fufu avec sauce d'arachide - Akoumé avec sauce feuille - Riz sauce graine - Pâte rouge avec viande grillée - Ablo avec poisson braisé</p>
-                    <div class="price">4,500 - 8,500 FCFA</div>
+                    <h3>Petit Déjeuner</h3>
+                    <p>Café togolais - Thé - Chocolat chaud - Pain frais avec confiture - Omelettes - Fruits frais</p>
+                    <div class="price">1,500 - 4,500 FCFA</div>
                 </div>
                 <div class="menu-item fade-in delay-2">
-                    <h3>Grillades</h3>
-                    <p>Brochettes de boeuf mariné - Poulet braisé entier - Poisson capitaine grillé - Côtelettes d'agneau - Plateau mixte pour 2 personnes</p>
-                    <div class="price">5,500 - 12,000 FCFA</div>
+                    <h3>Déjeuner & Dîner</h3>
+                    <p>Plats complets avec accompagnements - Grillades - Poissons frais - Salades composées</p>
+                    <div class="price">4,500 - 12,000 FCFA</div>
                 </div>
                 <div class="menu-item fade-in">
-                    <h3>Cuisine Internationale</h3>
-                    <p>Poulet rôti aux herbes - Pâtes fraîches maison - Burger gourmet - Pizza au feu de bois - Plateau de sushis</p>
-                    <div class="price">6,000 - 10,000 FCFA</div>
-                </div>
-                <div class="menu-item fade-in delay-1">
-                    <h3>Desserts</h3>
-                    <p>Banane flambée - Moelleux au chocolat - Glaces artisanales - Tarte aux fruits de saison - Assiette de fruits tropicaux</p>
-                    <div class="price">2,500 - 4,500 FCFA</div>
-                </div>
-                <div class="menu-item fade-in delay-2">
                     <h3>Boissons</h3>
-                    <p>Jus naturels (gingembre, bissap, tamarin) - Cocktails signature - Vins sélectionnés - Bières locales et importées - Cafés et thés</p>
-                    <div class="price">1,500 - 5,000 FCFA</div>
+                    <p>Jus naturels (gingembre, bissap, tamarin) - Cocktails - Vins - Bières locales - Eaux minérales</p>
+                    <div class="price">1,000 - 5,000 FCFA</div>
                 </div>
             </div>
         </div>
@@ -987,19 +1057,64 @@
                     <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Plat traditionnel togolais">
                 </div>
                 <div class="gallery-item fade-in delay-1">
-                    <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1398&q=80" alt="Intérieur du restaurant">
+                    <img src="WhatsApp Image 2025-07-08 à 15.51.53_e75254ee.jpg" alt="Bar et dépôt de boissons Melly Mello">
                 </div>
                 <div class="gallery-item fade-in delay-2">
-                    <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1371&q=80" alt="Chef préparant un plat">
+                    <img src="KAKEMONO MELLY MELLO.png" alt="Menu des plats Melly Mello">
                 </div>
                 <div class="gallery-item fade-in">
-                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1381&q=80" alt="Plat gastronomique">
+                    <img src="FLYERS MELLY MELLO.png" alt="Carte des plats Melly Mello">
                 </div>
                 <div class="gallery-item fade-in delay-1">
-                    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1527&q=80" alt="Dessert gourmand">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1381&q=80" alt="Plat gastronomique">
                 </div>
                 <div class="gallery-item fade-in delay-2">
-                    <img src="https://images.unsplash.com/photo-1510626176961-4b57d4fbad03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Terrasse du restaurant">
+                    <img src="WhatsApp Image 2025-07-08 à 15.52.30_a0e4e2b7.jpg" alt="Spécialités Melly Mello">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nouvelle Section Vidéo -->
+    <section id="video" class="video-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Notre Univers en Vidéo</h2>
+            <div class="video-container fade-in">
+                <video poster="FLYERS MELLY MELLO.png" controls>
+                    <!-- Remplacez par vos propres vidéos -->
+                    <source src="restaurant-video.mp4" type="video/mp4">
+                    <source src="restaurant-video.webm" type="video/webm">
+                    Votre navigateur ne supporte pas les vidéos HTML5.
+                </video>
+                <div class="video-overlay">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Galerie de mini-vidéos -->
+            <div class="video-gallery" style="margin-top: 4rem;">
+                <h3 style="text-align: center; margin-bottom: 2rem; color: #f39c12;">Découvrez nos spécialités</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="video-thumbnail">
+                        <video poster="KAKEMONO MELLY MELLO.png" controls style="width: 100%; border-radius: 10px;">
+                            <source src="specialite1.mp4" type="video/mp4">
+                        </video>
+                        <h4 style="margin-top: 1rem; text-align: center;">Préparation du Pifion</h4>
+                    </div>
+                    <div class="video-thumbnail">
+                        <video poster="WhatsApp Image 2025-07-08 à 15.52.30_a0e4e2b7.jpg" controls style="width: 100%; border-radius: 10px;">
+                            <source src="specialite2.mp4" type="video/mp4">
+                        </video>
+                        <h4 style="margin-top: 1rem; text-align: center;">Notre Ayimolou maison</h4>
+                    </div>
+                    <div class="video-thumbnail">
+                        <video poster="FLYERS MELLY MELLO.png" controls style="width: 100%; border-radius: 10px;">
+                            <source src="specialite3.mp4" type="video/mp4">
+                        </video>
+                        <h4 style="margin-top: 1rem; text-align: center;">Ambiance du restaurant</h4>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1064,18 +1179,15 @@
             <div class="location-content">
                 <div class="location-info fade-in">
                     <h3>Nous Trouver</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> <strong>Adresse :</strong> Rue de la Marina, Quartier Nyékonakpoè, Lomé, Togo</p>
-                    <p><i class="fas fa-phone-alt"></i> <strong>Téléphone :</strong> +228 XX XX XX XX</p>
-                    <p><i class="fas fa-envelope"></i> <strong>Email :</strong> contact@mellymello.tg</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Adresse :</strong> En Face le chateau du CEG Babarakondji, Lomé, Togo</p>
+                    <p><i class="fas fa-phone-alt"></i> <strong>Téléphone :</strong> +228 93 99 96 67 / 97 71 60 18</p>
                     <p><i class="fas fa-clock"></i> <strong>Horaires d'ouverture :</strong></p>
-                    <p>Lundi - Vendredi : 11h00 - 23h00</p>
-                    <p>Samedi - Dimanche : 10h00 - 00h00</p>
-                    <p><i class="fas fa-car"></i> <strong>Parking :</strong> Disponible et sécurisé</p>
-                    <p><i class="fas fa-wifi"></i> <strong>WiFi :</strong> Accès gratuit pour nos clients</p>
+                    <p>Mardi - Dimanche : 10h00 - 22h00</p>
+                    <p>Fermé le Lundi</p>
                     
                     <div style="display: flex; gap: 1rem; margin-top: 2rem;">
                         <a href="https://maps.app.goo.gl/K91CGZUfo2zw2CiX8" target="_blank" class="cta-button" style="display: inline-block;">Voir sur Google Maps</a>
-                        <a href="tel:+22890670077" class="cta-button" style="display: inline-block; background: linear-gradient(45deg, #25D366, #128C7E);">
+                        <a href="tel:+22893999667" class="cta-button" style="display: inline-block; background: linear-gradient(45deg, #25D366, #128C7E);">
                             <i class="fas fa-phone-alt"></i> Appeler
                         </a>
                     </div>
@@ -1095,7 +1207,7 @@
                     <div class="contact-card">
                         <h3><i class="fas fa-phone-alt"></i> Réservation</h3>
                         <p>Pour réserver une table, appelez-nous directement ou envoyez-nous un message WhatsApp en cliquant sur le bouton flottant.</p>
-                        <p><strong>Téléphone :</strong> +228 90 67 00 77</p>
+                        <p><strong>Téléphone :</strong> +228 93 99 96 67</p>
                     </div>
                     <div class="contact-card">
                         <h3><i class="fas fa-utensils"></i> Événements</h3>
@@ -1156,10 +1268,9 @@
                 </div>
                 <div class="footer-column">
                     <h3>Contact</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Rue de la Marina, Lomé, Togo</p>
-                    <p><i class="fas fa-phone-alt"></i> +228 90 67 00 77</p>
-                    <p><i class="fas fa-envelope"></i> contact@mellymello.tg</p>
-                    <p><i class="fas fa-clock"></i> Lun-Ven: 11h-23h | Sam-Dim: 10h-00h</p>
+                    <p><i class="fas fa-map-marker-alt"></i> En Face le chateau du CEG Babarakondji, Lomé, Togo</p>
+                    <p><i class="fas fa-phone-alt"></i> +228 93 99 96 67 / 97 71 60 18</p>
+                    <p><i class="fas fa-clock"></i> Mar-Dim: 10h-22h | Fermé Lundi</p>
                 </div>
                 <div class="footer-column">
                     <h3>Newsletter</h3>
@@ -1246,7 +1357,7 @@
             const notes = encodeURIComponent(document.getElementById('order-notes').value);
             
             // Construct WhatsApp message
-            const whatsappNumber = '22890670077'; // Replace with your WhatsApp number
+            const whatsappNumber = '22893999667'; // Remplacez par votre numéro WhatsApp
             const message = `Nouvelle commande Melly Mello:%0A%0A*Nom:* ${name}%0A*Téléphone:* ${phone}%0A*Date/Heure:* ${date}%0A*Type:* ${type}%0A*Adresse:* ${address}%0A%0A*Commande:*%0A${items}%0A%0A*Notes:*%0A${notes}`;
             
             // Open WhatsApp with pre-filled message
@@ -1273,6 +1384,26 @@
 
         // Current year for footer
         document.querySelector('.copyright p').innerHTML = `&copy; ${new Date().getFullYear()} Melly Mello Restaurant. Tous droits réservés.`;
+
+        // Video player functionality
+        const videoContainer = document.querySelector('.video-container');
+        const video = videoContainer.querySelector('video');
+        const playButton = videoContainer.querySelector('.play-button');
+        
+        playButton.addEventListener('click', function() {
+            video.play();
+            videoContainer.querySelector('.video-overlay').style.opacity = '0';
+        });
+        
+        video.addEventListener('click', function() {
+            if (video.paused) {
+                video.play();
+                videoContainer.querySelector('.video-overlay').style.opacity = '0';
+            } else {
+                video.pause();
+                videoContainer.querySelector('.video-overlay').style.opacity = '1';
+            }
+        });
     </script>
 </body>
 </html>
